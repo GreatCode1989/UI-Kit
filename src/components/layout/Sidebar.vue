@@ -1,11 +1,12 @@
 <template>
-  <div :class="['sidebar', {sidebar_isopen: openSideBar}]">
+  <div :class="['sidebar', { sidebar_isopen: openSideBar }]">
     <router-link
-    class="sidebar__link"
+      class="sidebar__link"
       v-for="link in links"
       :key="link.name"
       :to="link.href"
-    >{{ link.name }}</router-link>
+      >{{ link.name }}</router-link
+    >
   </div>
 </template>
 
@@ -15,13 +16,14 @@ import { ref } from "vue";
 const props = defineProps({
   openSideBar: {
     type: Boolean,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
 const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
+  { name: "Checkbox", href: "/checkbox" },
 ]);
 </script>
 
