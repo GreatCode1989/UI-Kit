@@ -1,13 +1,16 @@
 <script setup>
 import Button from "@/components/Button.vue";
+import { ref } from "vue";
+
+const eventButton = ref(false);
 
 const eventForButton = () => {
-  alert("You clicked danger button");
+  eventButton.value = !eventButton.value;
 };
 </script>
 
 <template>
-  <h1 class="heading-1">Button</h1>
+  <h2>Button List</h2>
   <h2 class="heading-2">Disabled</h2>
   <div class="line">
     <Button label="Primary" color="primary" disabled />
@@ -56,6 +59,24 @@ const eventForButton = () => {
   </div>
   <h2 class="heading-2">Event</h2>
   <div class="line">
-    <Button label="@click" color="danger" @click="eventForButton" />
+    <Button
+      label="Сlick"
+      :color="eventButton ? 'danger' : 'success'"
+      @click="eventForButton"
+    />
+    <div class="event-front"><p v-if="eventButton">I am Frontend</p></div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.event-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(100%, -20%);
+  font-weight: bold;
+  font-size: 21px;
+  color: blue;
+  font-size: 20px;
+}
+</style>

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="heading-1">Checkbox</h1>
     <h2 class="heading 2">Checkbox Active</h2>
     <div class="line">
       <Checkbox
@@ -11,7 +10,6 @@
         v-model:checked="checkboxActive"
       />
     </div>
-    <h1 class="heading-1">Checkbox</h1>
     <h2 class="heading 2">Checkbox Disabled</h2>
     <div class="line">
       <Checkbox
@@ -30,6 +28,17 @@
         :options="listOfHeroes"
         name="heroes"
         v-model:value="selectedHeroes"
+      />
+    </div>
+    <h2 class="heading 2">Switch</h2>
+    <div class="line">
+      <Checkbox
+        :label="switchProfessional ? 'I am Frontend Developer' : 'I am Backend Developer'"
+        id="switch "
+        name="switch"
+        value="I like it"
+        type="switch"
+        v-model:checked="switchProfessional"
       />
     </div>
   </div>
@@ -52,6 +61,8 @@ const listOfHeroes = ref([
 ]);
 
 const selectedHeroes = ref([]);
+
+const switchProfessional = ref(false);
 </script>
 
 <style lang="scss" scoped></style>

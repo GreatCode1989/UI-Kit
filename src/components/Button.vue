@@ -6,15 +6,15 @@
         `btn_${color}`,
         { btn_rounded: rounded },
         { btn_outlined: outlined },
-        {btn_icon: icon},
-        {btn_large: size === 'large'}
+        { btn_icon: icon },
+        { btn_large: size === 'large' },
       ]"
       :disabled="disabled"
       @click="clickButton"
     >
-    <span v-if="icon">
-      <font-awesome-icon :icon="`fa-regular fa-${icon}`" />
-    </span>
+      <span v-if="icon">
+        <font-awesome-icon :icon="`fa-regular fa-${icon}`" />
+      </span>
       <span v-else>{{ label }}</span>
     </button>
   </div>
@@ -49,15 +49,15 @@ const props = defineProps({
   size: {
     type: String,
     required: false,
-    default: 'normal'
+    default: "normal",
   },
 });
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(["click"]);
 
 const clickButton = () => {
-  emit('click')
-}
+  emit("click");
+};
 </script>
 
 <style lang="scss" scoped>

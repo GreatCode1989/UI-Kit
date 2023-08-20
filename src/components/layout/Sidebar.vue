@@ -24,6 +24,11 @@ const links = ref([
   { name: "Typography", href: "/typography" },
   { name: "Button", href: "/button" },
   { name: "Checkbox", href: "/checkbox" },
+  { name: "Radiobutton", href: "/radiobutton" },
+  { name: "Progress", href: "/progress" },
+  { name: "Input", href: "/input" },
+  { name: "Tabs", href: "/tabs" },
+  { name: "Table", href: "/table" },
 ]);
 </script>
 
@@ -45,6 +50,7 @@ const links = ref([
   }
   &__link {
     display: block;
+    color: blue;
     border-radius: 12px;
     border: 2px solid #fff;
     transition: 0.2s;

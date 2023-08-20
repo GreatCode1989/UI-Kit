@@ -29,6 +29,7 @@
   
   .line {
     display: flex;
+    position: relative;
     flex-wrap: wrap;
     margin-bottom: 20px;
     &_block {
