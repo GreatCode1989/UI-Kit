@@ -2,12 +2,12 @@
   <div :class="`background-${backgroundBlue}`">
     <div class="header-background">
       <div class="header">
-        <div v-if="percentBar === 90">Welcome Home My Friend</div>
-        <div class="goodbye" v-if="percentBar === 100">Goodbye My Friend</div>
+        <div class="best" v-if="percentBar === 90">Best Game</div>
+        <div class="goodbye" v-if="percentBar === 100">to be continued ...</div>
       </div>
     </div>
 
-    <h2 class="heading-2">Progress Bar</h2>
+    <h2 class="heading-12">Batman History</h2>
     <div class="line line_block">
       <ProgressBar :maxWidth="'400px'" :percent="percentBar" color="success" />
       <Button label="add 10%" @click="addPercentBar" />
@@ -61,7 +61,7 @@ const subtractPercentBar = () => {
   left: 510px;
   font-weight: bold;
   font-size: 35px;
-  color: #369a28;
+  color: #d2a923;
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -69,56 +69,78 @@ const subtractPercentBar = () => {
   z-index: 1;
 }
 
+.heading-12 {
+  font-size: 30px;
+  padding: 50px;
+  color: #26c1a4;
+}
+
+.best {
+  opacity: 0.5;
+}
+
 .goodbye {
   padding-left: 70px;
   color: #09ccef;
+  opacity: 0.3;
 }
 .background-10 {
-  background-color: #09ccef;
+  background-image: url("../assets/1.webp");
+  background-size: cover;
   color: #fff;
 }
 
 .background-20 {
-  background-color: #1ea9c1;
+  background-image: url("../assets/2.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-30 {
-  background-color: #2484a7;
+  background-image: url("../assets/3.jpg");
+  background-size: cover;
+  color: #fff;
 }
 
 .background-40 {
-  background-color: #2b5f7f;
+  background-image: url("../assets/4.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-50 {
-  background-color: #2e5968;
+  background-image: url("../assets/5.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-60 {
-  background-color: #2e495a;
+  background-image: url("../assets/7.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-70 {
-  background-color: #313f47;
+  background-image: url("../assets/8.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-80 {
-  background-color: #2d373d;
+  background-image: url("../assets/9.avif");
+  background-size: cover;
   color: #fff;
 }
 
 .background-90 {
-  background-color: #5c2b7f;
+  background-image: url("../assets/9.jpg");
+  background-size: cover;
   color: #fff;
 }
 
 .background-100 {
-  background-color: #50254f;
+  background-image: url("../assets/10.jpeg");
+  background-size: cover;
   color: #fff;
 }
 </style>

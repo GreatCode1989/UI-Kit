@@ -52,12 +52,30 @@ const links = ref([
     display: block;
     color: blue;
     border-radius: 12px;
-    border: 2px solid #fff;
     transition: 0.2s;
     font-weight: bold;
+    padding-left: 10px;
     margin-bottom: 10px;
+    border: 1px transparent;
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      border: 1px solid var(--success);
+      transition: width 0.1s ease-in-out;
+    }
     &:hover {
-      color: var(--primary);
+      color: var(--success);
+    }
+
+    &:hover:before {
+      width: 50%;
     }
   }
 }

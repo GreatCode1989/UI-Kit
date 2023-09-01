@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <router-link to="/">UI Kit Vue3</router-link>
+    <router-link to="/">BATMAN FOREVER</router-link>
   </header>
 </template>
 

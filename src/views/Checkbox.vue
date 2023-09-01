@@ -66,7 +66,7 @@ const switchProfessional = ref(false);
 </script>
 
 <style lang="scss" scoped>
-html .bg-check {
+.bg-check {
   background-color: rgb(41, 41, 36);
   color: aliceblue;
 }
