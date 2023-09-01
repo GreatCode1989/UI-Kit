@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'bg-check': switchProfessional }">
     <h2 class="heading 2">Checkbox Active</h2>
     <div class="line">
       <Checkbox
@@ -33,7 +33,7 @@
     <h2 class="heading 2">Switch</h2>
     <div class="line">
       <Checkbox
-        :label="switchProfessional ? 'I am Frontend Developer' : 'I am Backend Developer'"
+        :label="switchProfessional ? 'I am Backend Developer' : 'I am Frontend Developer'"
         id="switch "
         name="switch"
         value="I like it"
@@ -65,4 +65,9 @@ const selectedHeroes = ref([]);
 const switchProfessional = ref(false);
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+html .bg-check {
+  background-color: rgb(41, 41, 36);
+  color: aliceblue;
+}
+</style>

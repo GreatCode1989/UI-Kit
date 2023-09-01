@@ -1,21 +1,23 @@
 <script setup>
-import Header from './components/layout/Header.vue'
-import Sidebar from './components/layout/Sidebar.vue';
-import {ref} from 'vue'
+import Header from "./components/layout/Header.vue";
+import Sidebar from "./components/layout/Sidebar.vue";
+import { ref } from "vue";
 
-const isOpenMenu = ref(false)
+const isOpenMenu = ref(false);
 
 const toggleMenu = () => {
-isOpenMenu.value = !isOpenMenu.value
-}
+  isOpenMenu.value = !isOpenMenu.value;
+};
 </script>
 
 <template>
   <div class="containet">
-  <div class="sidebar-toggle" @click="toggleMenu">&#8592;</div>
-  <Header/>
-  <Sidebar :openSideBar="isOpenMenu"/>
-    <div :class="['content', {content_full: !isOpenMenu}]">
+    <div class="sidebar-toggle" @click="toggleMenu">
+      {{ isOpenMenu ? "&#8592;" : "&#8594;" }}
+    </div>
+    <Header />
+    <Sidebar :openSideBar="isOpenMenu" />
+    <div :class="['content', { content_full: !isOpenMenu }]">
       <router-view></router-view>
     </div>
   </div>
@@ -57,7 +59,7 @@ isOpenMenu.value = !isOpenMenu.value
 
 @media screen and (max-width: 1023px) {
   .content {
-    margin-left: 0;
+    margin-left: 250px;
   }
 }
 </style>
