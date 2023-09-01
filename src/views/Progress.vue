@@ -7,12 +7,12 @@
       </div>
     </div>
 
-    <h2 class="heading-12">Batman History</h2>
+    <h2 :class="['heading-12', { 'heading-13': percentBar === 0 }]">Batman History</h2>
     <div class="line line_block">
       <ProgressBar :maxWidth="'400px'" :percent="percentBar" color="success" />
       <Button label="add 10%" @click="addPercentBar" />
       <Button
-        label="subtract 5%"
+        label="subtract 10%"
         color="warning"
         @click="subtractPercentBar"
         style="margin-left: 30px"
@@ -73,6 +73,11 @@ const subtractPercentBar = () => {
   font-size: 30px;
   padding: 50px;
   color: #26c1a4;
+  opacity: 0.1;
+}
+
+.heading-13 {
+  opacity: 0.7;
 }
 
 .best {
