@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2 class="heading-2">Progress Bar</h2>
-    <ProgressBar :maxWidth="'400px'" :percent="percentBar" />
+    div.line line_block
+
+    <ProgressBar :maxWidth="'400px'" :percent="percentBar" color="success" />
   </div>
 </template>
 

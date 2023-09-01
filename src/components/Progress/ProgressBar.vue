@@ -1,8 +1,13 @@
 <template>
   <div class="progress-container" :style="[{ 'max-width': maxWidth }]">
-    <span class="progress-percent">{{ percent }}%</span>
-    <div class="progress">
-      <div class="progress-bar" :style="[{ width: `${percent}%` }]"></div>
+    <span class="progress-percent" :style="[{ color: `var(--${color})` }]"
+      >{{ percent }}%</span
+    >
+    <div class="progress" :style="[{ background: `var(--${color}-hover)` }]">
+      <div
+        class="progress-bar"
+        :style="[{ width: `${percent}%` }, { background: `var(--${color})` }]"
+      ></div>
     </div>
   </div>
 </template>
@@ -28,14 +33,12 @@ const props = defineProps({
 .progress {
   height: 10px;
   border-radius: 4px;
-  background: var(--primary-hover);
 
   &-container {
     margin-bottom: 20px;
     overflow: hidden;
   }
   &-bar {
-    background: #761a1a;
     height: 100%;
     border-radius: 4px;
     transition: 0.5s;
