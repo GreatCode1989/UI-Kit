@@ -9,6 +9,9 @@ const tableHeads = ["Id", "Author", "Title", "Cover", ""];
 
 const sizeColumns = "50px 1fr 2fr 140px 150px";
 
+const sortField = ref('id')
+const typeSort = ref('asc')
+
 const books = ref([
   {
     id: 1,
@@ -34,13 +37,37 @@ const books = ref([
     bg: "#00C48C",
   },
 ]);
+
+const bookSorting = computed(() => {
+  return books.value.sort((a, b) => {
+    let modifier = 1;
+    if (typeSort.value === 'desc') modifier = -1
+    if (a[sortField.value] < b[sortField.value]) return -1 * modifier
+    if (a[sortField.value] > b[sortField.value]) return 1 * modifier
+    return 0
+  })
+})
+
+const setSort = (name) => {
+if(sortField.value === name) {
+  if(typeSort.value === 'asc') {
+    typeSort.value = 'desc'
+  } else {
+    typeSort.value = 'asc'
+  }
+} else {
+  sortField.value = name
+}
+}
 </script>
 
 <template>
   <h2 class="heading-1">Table</h2>
-  <BaseTable :head="tableHeads" :columnTemplates="sizeColumns">
+  <span>Sort Field: {{ sortField }}</span><br>
+  <span>Type Sort: {{ typeSort }}</span><br>
+  <BaseTable :head="tableHeads" :columnTemplates="sizeColumns" @sorting="setSort">
     <table-row
-      v-for="book in books"
+      v-for="book in bookSorting"
       :key="book.id"
       :columnTemplates="sizeColumns"
       :bgRow="book.bg"

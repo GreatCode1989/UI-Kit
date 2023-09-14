@@ -1,8 +1,16 @@
 <template>
   <div class="table-wrapper">
     <div class="table">
-      <div class="table-head" :style="{ 'grid-template-columns': columnTemplates }">
-        <div class="table-head__name" v-for="(element, i) in head" :key="i">
+      <div
+        class="table-head"
+        :style="{ 'grid-template-columns': columnTemplates }"
+      >
+        <div
+          class="table-head__name"
+          v-for="(element, i) in head"
+          :key="i"
+          @click="clickOnHead(element)"
+        >
           {{ element }}
         </div>
       </div>
@@ -22,6 +30,12 @@ const props = defineProps({
     required: false,
   },
 });
+
+const emit = defineEmits(['sorting'])
+
+const clickOnHead = (name) => {
+  emit('sorting', name.toLowerCase())
+};
 </script>
 
 <style lang="scss" scoped>
